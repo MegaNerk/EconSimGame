@@ -81,5 +81,4 @@ func resize_text(this_label : Label):
 func pursue_new_job():
 	cur_job = ECONOMY.get_random_job()
 	job_duration_months = 0
-	#Test comment
 #endregion Gameplay functionality
