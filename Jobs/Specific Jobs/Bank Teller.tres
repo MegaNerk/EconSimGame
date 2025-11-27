@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="job_data" load_steps=3 format=3 uid="uid://j4ambceial1"]
+
+[ext_resource type="Script" uid="uid://cahih7655ltkf" path="res://Jobs/job_data.gd" id="1_42t2g"]
+[ext_resource type="Resource" uid="uid://d1oabqoari0pk" path="res://Jobs/Specific Jobs/Financial Analyst.tres" id="2_42t2g"]
+
+[resource]
+script = ExtResource("1_42t2g")
+name = "Bank Teller"
+salary = 2800.0
+satisfaction = 0.28
+competitiveness = 0.36
+level = 1
+promotion = Array[ExtResource("1_42t2g")]([ExtResource("2_42t2g")])
+industry = 1
+metadata/_custom_type_script = "uid://cahih7655ltkf"

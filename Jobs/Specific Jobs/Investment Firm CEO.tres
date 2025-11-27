@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="job_data" load_steps=2 format=3 uid="uid://u0lodjnkmkxc"]
+
+[ext_resource type="Script" uid="uid://cahih7655ltkf" path="res://Jobs/job_data.gd" id="1_8egi0"]
+
+[resource]
+script = ExtResource("1_8egi0")
+name = "Investment Firm CEO"
+salary = 85300.0
+satisfaction = 0.7
+competitiveness = 0.98
+level = 5
+promotion = Array[ExtResource("1_8egi0")]([])
+industry = 1
+metadata/_custom_type_script = "uid://cahih7655ltkf"

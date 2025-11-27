@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="job_data" load_steps=3 format=3 uid="uid://bcfy6i7a0yuqe"]
+
+[ext_resource type="Script" uid="uid://cahih7655ltkf" path="res://Jobs/job_data.gd" id="1_xeqyo"]
+[ext_resource type="Resource" uid="uid://bm02ki37k4iu1" path="res://Jobs/Specific Jobs/Farmer.tres" id="2_31kfr"]
+
+[resource]
+script = ExtResource("1_xeqyo")
+name = "Farmhand"
+salary = 3000.0
+satisfaction = 0.54
+competitiveness = 0.39
+level = 1
+promotion = Array[ExtResource("1_xeqyo")]([ExtResource("2_31kfr")])
+industry = 0
+metadata/_custom_type_script = "uid://cahih7655ltkf"

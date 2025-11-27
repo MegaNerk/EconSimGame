@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://3opg86t7n12r"]
+
+[ext_resource type="Script" uid="uid://7nrv006wjuwp" path="res://Game Pieces/citizen.gd" id="1_hjhum"]
+[ext_resource type="StyleBox" uid="uid://db8k0cinyots3" path="res://Globals/Styles/citizen_panel.tres" id="1_o0iki"]
+[ext_resource type="Resource" uid="uid://b2mipnlkpk2e7" path="res://Jobs/Specific Jobs/Unemployed.tres" id="2_06rsd"]
+
+[node name="Citizen" type="Control" node_paths=PackedStringArray("name_label", "value_bar", "worth_label", "job_label", "sat_bar")]
+custom_minimum_size = Vector2(350, 115)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 250.0
+offset_bottom = 75.0
+script = ExtResource("1_hjhum")
+name_label = NodePath("Panel/MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
+value_bar = NodePath("Panel/MarginContainer/HBoxContainer/VBoxContainer/ValueBar")
+worth_label = NodePath("Panel/MarginContainer/HBoxContainer/VBoxContainer/ValueBar/CenterContainer/WorthLabel")
+job_label = NodePath("Panel/MarginContainer/HBoxContainer/VBoxContainer/JobLabel")
+default_job = ExtResource("2_06rsd")
+sat_bar = NodePath("Panel/MarginContainer/HBoxContainer/VBoxContainer2/SatBar")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_o0iki")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Citizen Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueBar" type="ProgressBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 0.0
+show_percentage = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer/ValueBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorthLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer/ValueBar/CenterContainer"]
+layout_mode = 2
+text = "$0"
+
+[node name="JobLabel" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Unemployed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SatBar" type="ProgressBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+value = 1.0
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Sat."

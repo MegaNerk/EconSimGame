@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="job_data" load_steps=3 format=3 uid="uid://bm02ki37k4iu1"]
+
+[ext_resource type="Script" uid="uid://cahih7655ltkf" path="res://Jobs/job_data.gd" id="1_y17rn"]
+[ext_resource type="Resource" uid="uid://de8b8jnif4rmu" path="res://Jobs/Specific Jobs/Corporate Farm Owner.tres" id="2_vreos"]
+
+[resource]
+script = ExtResource("1_y17rn")
+name = "Farmer"
+salary = 5800.0
+satisfaction = 0.83
+competitiveness = 0.49
+level = 3
+promotion = Array[ExtResource("1_y17rn")]([ExtResource("2_vreos")])
+industry = 0
+metadata/_custom_type_script = "uid://cahih7655ltkf"

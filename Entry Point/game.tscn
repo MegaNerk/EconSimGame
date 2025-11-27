@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxrsl0ldqe0xj"]
+
+[ext_resource type="Script" uid="uid://cql7twuvktcxu" path="res://Entry Point/game_manager.gd" id="1_ocpl4"]
+[ext_resource type="PackedScene" uid="uid://3opg86t7n12r" path="res://Game Pieces/Citizen.tscn" id="2_1taju"]
+[ext_resource type="Script" uid="uid://n6gxcubfdh7v" path="res://Entry Point/date_tracker.gd" id="3_1taju"]
+
+[node name="Game" type="Control" node_paths=PackedStringArray("citizen_board", "date", "col")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocpl4")
+citizen_scene = ExtResource("2_1taju")
+citizen_board = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer")
+date = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Date")
+col = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CoL")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+alignment = 1
+
+[node name="Date" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jan. 2025"
+script = ExtResource("3_1taju")
+metadata/_custom_type_script = "uid://n6gxcubfdh7v"
+
+[node name="Control" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoL" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Cost of Living: $1000.00"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MonthButton" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Next Month"
+
+[node name="YearButton" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Next Year"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 7
+columns = 3
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/MonthButton" to="." method="move_next_month"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/YearButton" to="." method="move_next_year"]
